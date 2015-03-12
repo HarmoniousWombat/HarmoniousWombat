@@ -20,6 +20,8 @@
   "dependencies": {
     "express": "^4.12.2",
     "gulp": "^3.8.11",
-    "gulp-nodemon": "^1.0.5"
+    "gulp-nodemon": "^1.0.5",
+    "passport": "^0.2.1",
+    "passport-github": "^0.1.5"
   }
 }
