@@ -1,0 +1,10 @@
+<div class="container">
+  <form ng-submit='signup()'>
+    <h2>Sign up!</h2>
+    <input ng-model='user.username' type="text" class="form-control" placeholder="Username" required autofocus>
+    <input ng-model='user.password' type="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <a href="#/signin">Already have an account? <strong>Signin</strong></a>
+    <div ng-if="err" class="alert alert-danger" role="alert" ng-model="err">{{err}}</div>
+  </form>
+</div>

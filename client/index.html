@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>RecallJS</title>
-</head>
-<body>
-  <h1>Hello from RecallJS!</h1>
-  <h3>Please login!</h3>
-  <a href="/auth/github">Login via Github &rarr;</a>
-</body>
+<html ng-app='RecallJS'>
+  <head>
+    <meta charset="utf-8" />
+    <title>RecallJS</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div ng-view></div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/controllers/AuthController.js"></script>
+    <script src="app/controllers/HomeController.js"></script>
+  </body>
 </html>
