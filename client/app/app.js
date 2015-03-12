@@ -16,7 +16,7 @@ angular.module('RecallJS', ['ngRoute'])
         templateUrl: 'app/components/landing/views/signupView.html',
         controller: 'AuthController',
         authenticate: false
-      });
+      })
     $httpProvider.interceptors.push('AttachTokens');
   })
 
