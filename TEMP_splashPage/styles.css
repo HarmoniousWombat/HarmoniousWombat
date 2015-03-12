@@ -1,0 +1,32 @@
+html { 
+  background: url(assets/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+div {
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0 10px;
+}
+
+.site-header {
+  padding-top: 50px;
+}
+
+.site-logo
+
+.site-nav
+
+.inline-block-list
+
+.login
