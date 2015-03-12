@@ -4,13 +4,19 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
+  font: 17px/1.4 'Open Sans',sans-serif;
   text-align: center;
+  color: white;
 }
 
 div {
   display: block;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+  margin: 0 .5em .75em;
 }
 
 .container {
@@ -23,10 +29,70 @@ div {
   padding-top: 50px;
 }
 
-.site-logo
+.site-promo {
+  padding: 12em 0 5em;
+}
 
-.site-nav
+.site-logo {
+  color: #fff;
+  float: left;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 #000;
+  text-transform: uppercase;
+}
 
-.inline-block-list
+.site-nav {
+  color: #ffa000;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  list-style-type: none;
+  margin: 7px 0 0;
+  padding: 0;
+}
 
-.login
+ul {
+  display: inline;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+/*.inline-block-list
+
+.login*/
+
+.inline-block-list li {
+  display: inline-block;
+  margin: 0 0 0 1.5em;
+  padding: 0;
+  vertical-align: top;
+}
+
+.btn {
+  color: #fff;
+  font-size: 1.5em;
+  padding: .6em 1em;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+  vertical-align: middle;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.btn-download {
+  background-color: #d9750b;
+  background-image: linear-gradient(#f90 10%,#e76a00 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5)inset,0 1px 3px rgba(0,0,0,.2);
+  border: 1px solid #995309;
+}
+
+.pipe {
+  color: #ffa000;
+}
