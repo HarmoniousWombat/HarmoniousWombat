@@ -1,6 +1,6 @@
 angular.module('RecallJS')
-
-.controller('AuthController', function ($scope, $window, $location, Auth) {
+  .controller('HomeController', function(){})
+  .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
   $scope.err;
   $scope.cp;

@@ -3,20 +3,20 @@ angular.module('RecallJS', ['ngRoute'])
   .config(function($routeProvider, $httpProvider){
     $routeProvider
       .when('/', {
-        templateUrl: "app/templates/home.html",
-        controller: "HomeController",
+        templateUrl: 'app/components/home/views/homeView.html',
+        controller: 'HomeController',
         authenticate: true
       })
       .when('/signin', {
-        templateUrl: 'app/templates/signin.html',
+        templateUrl: 'app/components/home/views/signinView.html',
         controller: 'AuthController',
         authenticate: false
       })
       .when('/signup', {
-        templateUrl: 'app/templates/signup.html',
+        templateUrl: 'app/components/home/views/signupView.html',
         controller: 'AuthController',
         authenticate: false
-      })
+      });
     $httpProvider.interceptors.push('AttachTokens');
   })
 
