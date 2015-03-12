@@ -3,17 +3,17 @@ angular.module('RecallJS', ['ngRoute'])
   .config(function($routeProvider, $httpProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'app/components/home/views/homeView.html',
+        templateUrl: 'app/components/landing/views/homeView.html',
         controller: 'HomeController',
         authenticate: true
       })
       .when('/signin', {
-        templateUrl: 'app/components/home/views/signinView.html',
+        templateUrl: 'app/components/landing/views/signinView.html',
         controller: 'AuthController',
         authenticate: false
       })
       .when('/signup', {
-        templateUrl: 'app/components/home/views/signupView.html',
+        templateUrl: 'app/components/landing/views/signupView.html',
         controller: 'AuthController',
         authenticate: false
       });
