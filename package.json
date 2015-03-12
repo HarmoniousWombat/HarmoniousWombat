@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/HarmoniousWombat/HarmoniousWombat",
   "dependencies": {
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^1.0.5"
   }
 }
