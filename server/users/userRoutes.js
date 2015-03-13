@@ -12,6 +12,9 @@ module.exports = function (app) {
           if (isMatch){
             var token = jwt.encode(username, 'secret');
             res.json({token: token});
+            console.log(username, 'logged in');
+          } else {
+            console.log(username, 'incorrect password');
           }
         });
       } else {
