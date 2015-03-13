@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/HarmoniousWombat/HarmoniousWombat",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.12.2",
     "gulp": "^3.8.11",
     "gulp-nodemon": "^1.0.5",
     "jwt-simple": "^0.2.0",
-    "mongoose": "^3.8.24"
+    "mongoose": "^3.8.24",
+    "q": "^1.2.0"
   }
 }
