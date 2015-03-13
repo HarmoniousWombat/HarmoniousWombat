@@ -3,9 +3,9 @@ angular.module('RecallJS', ['ngRoute'])
   .config(function($routeProvider, $httpProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'app/components/landing/views/homeView.html',
+        templateUrl: 'app/components/landing/views/landingView.html',
         controller: 'HomeController',
-        authenticate: true
+        authenticate: false
       })
       .when('/signin', {
         templateUrl: 'app/components/landing/views/signinView.html',
