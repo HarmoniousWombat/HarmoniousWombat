@@ -1,5 +1,5 @@
-html { 
-  background: url(assets/background.jpg) no-repeat center center fixed; 
+body { 
+  background: url(background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -64,6 +64,11 @@ ul {
   -webkit-padding-start: 40px;
 }
 
+form {
+  width: 30em;
+  margin: 8em auto 0 auto;
+}
+
 /*.inline-block-list
 
 .login*/
@@ -86,11 +91,10 @@ ul {
   border: 1px solid #333;
 }
 
-.btn-download {
+.btn-primary {
+  color: #fff;
   background-color: #d9750b;
-  background-image: linear-gradient(#f90 10%,#e76a00 100%);
-  box-shadow: 0 1px 0 rgba(255,255,255,.5)inset,0 1px 3px rgba(0,0,0,.2);
-  border: 1px solid #995309;
+  border-color: #d9750b;
 }
 
 .pipe {
