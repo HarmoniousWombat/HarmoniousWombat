@@ -3,7 +3,7 @@ angular.module('RecallJS', ['ngRoute'])
   .config(function($routeProvider, $httpProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'app/components/landing/views/splashView.html',
+        templateUrl: 'app/components/landing/views/landingView.html',
         controller: 'HomeController',
         authenticate: false
       })
