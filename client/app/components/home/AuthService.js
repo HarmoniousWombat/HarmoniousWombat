@@ -1,42 +1,44 @@
 angular.module('RecallJS')
-  .factory('Auth', function ($http, $location, $window) {
+  .factory('Auth', Auth);
 
-    var signin = function (user) {
-      return $http({
-        method: 'POST',
-        url: '/users/signin',
-        data: user
-      })
-      .then(function (resp) {
-        return resp.data.token;
-      });
-    };
+function Auth($http, $location, $window){
 
-    var signup = function (user) {
-      return $http({
-        method: 'POST',
-        url: '/users/signup',
-        data: user
-      })
-      .then(function (resp) {
-        return resp.data.token;
-      });
-    };
+  return {
+    signin: signin,
+    signup: signup,
+    isAuth: isAuth,
+    signout: signout
+  };
 
-    var isAuth = function () {
-      return !!$window.localStorage.getItem('com.recalljs');
-    };
+  function signin(user) {
+    return $http({
+      method: 'POST',
+      url: '/users/signin',
+      data: user
+    })
+    .then(function (resp) {
+      return resp.data.token;
+    });
+  }
 
-    var signout = function () {
-      $window.localStorage.removeItem('com.recalljs');
-      $location.path('/signin');
-    };
+  function signup(user) {
+    return $http({
+      method: 'POST',
+      url: '/users/signup',
+      data: user
+    })
+    .then(function (resp) {
+      return resp.data.token;
+    });
+  }
 
-    return {
-      signin: signin,
-      signup: signup,
-      isAuth: isAuth,
-      signout: signout
-    };
-  });
+  function isAuth() {
+    return !!$window.localStorage.getItem('com.recalljs');
+  }
+
+  function signout() {
+    $window.localStorage.removeItem('com.recalljs');
+    $location.path('/signin');
+  }
+}
 

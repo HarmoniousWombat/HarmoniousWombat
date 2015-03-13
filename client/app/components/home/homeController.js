@@ -1,5 +1,8 @@
 angular.module('RecallJS')
-  .controller('HomeController', function ($scope, $window, $location, Auth) {
+  .controller('HomeController', HomeController);
+
+function HomeController($scope, $window, $location, Auth){
+
   $scope.user = {};
   $scope.error = undefined;
 
@@ -26,4 +29,8 @@ angular.module('RecallJS')
         $scope.error = error.data.error;
       });
   };
-});
+
+  $scope.logout = function(){
+    Auth.signout();
+  };
+};
