@@ -1,18 +1,21 @@
 <div class="container">
   <h1>Library</h1>
 
-  <table id="userLibrary" class="table table-condensed">
+  <table id="userLibrary" class="table table-condensed table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th class="text-center">Title</th>
+        <th class="col-md-3 text-center">Title</th>
         <th class="text-center">Prompt</th>
+        <th class="col-md-1 text-center">Add to Dashboard</th>
+
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="problem in problems">
         <td>{{ problem.title }}</td>
         <td>{{ problem.prompt }}</td>
-        <td><button class="btn btn-lg btn-success btn-block" ng-click="addProblem(problem)">Add </button></td>
+        <td><span ng-show="!checkDash(problem)" ng-click="addProblem(problem)" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span ng-show="checkDash(problem)" class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
       </tr>
     </tbody>
   </table>
