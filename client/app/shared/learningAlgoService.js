@@ -11,7 +11,10 @@ function LearningAlgo($window) {
   // expose methods and properties to rest of app
   var exposed = {
     getProblem: getProblem,
-    currProblem: null
+    currProblem: null,
+    calculateWeight: calculateWeight,
+    getLastAttemptDate: getLastAttemptDate,
+    calcAverageRating: calcAverageRating
   };
   return exposed;
 
@@ -67,13 +70,14 @@ function LearningAlgo($window) {
   function calculateWeights(problems) {
     return problems.map(function(problem){
       // calculate total weight
-      var ageWeight = calcAgeWeight(problem);
-      var progressWeight = calcProgressWeight(problem);
-      var effortWeight = calcEffortWeight(problem);
-
-      var weight = ageWeight * progressWeight * effortWeight;
+      var weight = calculateWeight(problem);
       return [weight, problem];
     });
+  }
+
+  function calculateWeight(problem) {
+    return calcAgeWeight(problem) * calcProgressWeight(problem) *
+           calcEffortWeight(problem);
   }
 
   function calcAgeWeight(problem) {
@@ -87,23 +91,24 @@ function LearningAlgo($window) {
   }                                  // since the last attempt
 
   function calcProgressWeight(problem) {
-    // helper function to calculate the average of the most recent ratings
-    function calcAverageRating(attempts, numToAverage) {
-
-      // identify the most recent ratings
-      var recentAttempts = attempts.slice(-numToAverage);
-      var ratings = recentAttempts.map(function(attempt){
-        return attempt.rating;
-      });
-      // calculate the average of most recent ratings
-      var sumRatings = sum(ratings);
-      return sumRatings / numToAverage; // NOTE: May be dividing by more than the number of attempts
-                                 // which is what we want so that we aren't biased against seeing newer problems
-    }
     // calculate and return weight
     var avgRating = calcAverageRating(problem.attempts, 10); // calculate avg rating of last 10 attempts
     return Math.pow(0.5, 5 * avgRating); // weight will halve every time the
                                          // average rating of past 10 increases by 0.2
+  }
+
+  // helper function to calculate the average of the most recent ratings
+  function calcAverageRating(attempts, numToAverage) {
+
+    // identify the most recent ratings
+    var recentAttempts = attempts.slice(-numToAverage);
+    var ratings = recentAttempts.map(function(attempt){
+      return attempt.rating;
+    });
+    // calculate the average of most recent ratings
+    var sumRatings = sum(ratings);
+    return sumRatings / numToAverage; // NOTE: May be dividing by more than the number of attempts
+                               // which is what we want so that we aren't biased against seeing newer problems
   }
 
   function calcEffortWeight(problem) {
@@ -130,5 +135,12 @@ function LearningAlgo($window) {
     return numbers.reduce(function(tot, curr){
       return tot + curr;
     });
+  }
+
+  // TODO: Refactor and place in a utilities or stats Service
+  function getLastAttemptDate(problem) {
+    var attempts = problem.attempts;
+    var timeLastAttempt = attempts[attempts.length-1].timeSubmitted;
+    return timeLastAttempt;
   }
 }
